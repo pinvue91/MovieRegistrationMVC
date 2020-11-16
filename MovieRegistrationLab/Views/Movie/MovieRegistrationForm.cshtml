@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewData["Title"] = "MovieRegistrationForm";
+}
+
+@model Movie
+
+<h1>Movie Registration</h1>
+
+<h6 style="color: red">@Html.ValidationSummary()</h6>
+
+<form asp-action="MovieRegistered" method="post">
+    Title <input type="text" name="Title" value="@Model.Title" /> <br />
+    Genre <select id="Genre" name="Genre">
+        <option value="Action">Action</option>
+        <option value="Adventure">Adventure</option>
+        <option value="Comedy">Comedy</option>
+        <option value="Drama">Drama</option>
+        <option value="Horror">Horror</option>
+        <option value="Romance">Romance</option>
+        <option value="Sci-Fi">Sci-Fi</option>
+        <option value="Thriller">Thriller</option>
+    </select><br />
+    Year <input type="number" name="Year" value="" min="1880" max="2020" required/> <br />
+    Actor <input type="text" name="Actors" value="" required /> <br />
+    Director <input type="text" name="Directors" value="" required /> <br />
+    <input type="submit" value="Submit" />
+
+</form>
+
